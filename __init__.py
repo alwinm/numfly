@@ -98,6 +98,7 @@ pos_speed = 10.
 
 key_state = {}
 
+
 def rot_vertical(speed):
     global cam_vector
     global cam_normal
@@ -139,7 +140,10 @@ def get_pressed_keys(key_dict):
     keys,values = key_dict.keys(),key_dict.values()
     keys = n.array(list(keys))
     values = n.array(list(values))
-    return keys[values]
+    if n.any(values):
+        return keys[values]
+    else:
+        return []
     
 camdict = make_dirdict()
 def update(dt):
@@ -259,6 +263,6 @@ def on_draw():
 
 
 
-pyglet.clock.schedule_interval(update, 1/30.0)
+pyglet.clock.schedule_interval(update, 1/60.0)
 
 pyglet.app.run()
