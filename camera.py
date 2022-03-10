@@ -110,9 +110,9 @@ class Camera:
                 self.rot_around(-self.rot_speed)
                 
             elif item == key.LEFT:
-                self.rot_horizontal(0.1*self.rot_speed)
-            elif item == key.RIGHT:
                 self.rot_horizontal(-0.1*self.rot_speed)
+            elif item == key.RIGHT:
+                self.rot_horizontal(0.1*self.rot_speed)
             elif item == key.UP:
                 self.rot_vertical(-0.1*self.rot_speed)
             elif item == key.DOWN:
